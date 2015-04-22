@@ -33,7 +33,6 @@ public class NetworkKey {
   }
 
   /**
-   * @param name of key
    * @param key truncated to bytes
    */
   public NetworkKey(int[] key) {

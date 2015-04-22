@@ -172,8 +172,7 @@ public class Channel {
 	}
 
 	/**
-	 * @param isFree
-	 *            the isFree to set
+	 * @param free the isFree to set  
 	 */
 	protected synchronized void setFree(boolean free) {
 		LOGGER.entering(Channel.class.getSimpleName(), "setFree");
@@ -482,7 +481,8 @@ public class Channel {
 	 * Sets network of channel and assigns it
 	 *
 	 * TODO : Fix see org.cowboycoders.ant.messages.ChannelAssignMessage
-	 * @param netKeyName TODO : document this
+	 * TODO : document this
+	 * @param key 
 	 * @param type channel type
 	 * @param extended extended assignment parameters
 	 */
@@ -534,7 +534,7 @@ public class Channel {
 	}
 
 	/**
-	 * @see org.cowboycoders.ant.messages.ChannelFrequencyMessage
+	 * @see org.cowboycoders.ant.messages.config.ChannelFrequencyMessage
 	 * @param channelFrequency
 	 */
 	public void setFrequency(int channelFrequency) {

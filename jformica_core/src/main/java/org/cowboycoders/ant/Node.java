@@ -758,7 +758,7 @@ public class Node {
 	}
 
 /**
-   * Registers an event listener. To remove user {@link Node#removeRxListener(BroadcastListener));
+   * Registers an event listener. To remove user {@link Node#removeRxListener(BroadcastListener)}
    * @param handler event handler
    */
 	public void registerEventHandler(NodeEventHandler handler) {
