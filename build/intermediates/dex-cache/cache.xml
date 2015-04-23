@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<items version="2" >
+
+    <item
+        jar="/home/warren/Documents/development/java/JFormica/jformica_android/libs/antlib.jar"
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="157a65de5235dab0b9064ef02f2957809c73a76f">
+        <dex dex="/home/warren/Documents/development/java/JFormica/jformica_android/build/intermediates/pre-dexed/debug/antlib-b64349443c4a1befff5294f4f83b444c1f33eb1b.jar" />
+    </item>
+    <item
+        jar="/home/warren/Documents/development/java/JFormica/jformica_core/build/libs/jformica_core-0.0.5-SNAPSHOT.jar"
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="a2dcbea6712cb28c321c4a4d7a5312e77ff27c5b">
+        <dex dex="/home/warren/Documents/development/java/JFormica/jformica_android/build/intermediates/pre-dexed/debug/jformica_core-0.0.5-SNAPSHOT-30d8a20cb5ef1fb99aee6ee6b2160ee730321756.jar" />
+    </item>
+
+</items>

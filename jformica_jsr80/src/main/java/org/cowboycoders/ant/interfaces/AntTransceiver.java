@@ -103,6 +103,8 @@ public class AntTransceiver extends AbstractAntTransceiver {
 	UsbPipe inPipe = null;
 
 	private UsbReader usbReader;
+	
+	private ClaimInterfaceStrategy claimInterfaceStrategy = new DefaultClaimInterfaceImplementation();
 
 	// private int deviceNumber;
 	
@@ -399,29 +401,7 @@ public class AntTransceiver extends AbstractAntTransceiver {
 	 *            true to claim, false to release
 	 */
 	private void claimInterface(UsbInterface _interface, boolean claim) {
-
-		try {
-			interfaceLock.lock();
-			if (claim) {
-				_interface.claim();
-			} else {
-				if (_interface.isClaimed()) {
-					_interface.release();
-				}
-			}
-		} catch (UsbClaimException e) {
-			e.printStackTrace();
-			throw new AntCommunicationException(e);
-		} catch (UsbNotActiveException e) {
-			throw new AntCommunicationException(e);
-		} catch (UsbDisconnectedException e) {
-			throw new AntCommunicationException(e);
-		} catch (UsbException e) {
-			throw new AntCommunicationException(e);
-		} finally {
-			interfaceLock.unlock();
-		}
-
+		claimInterfaceStrategy.claimInterface(_interface, claim);
 	}
 
 	// FIXME : TAKES an age to start with reference javax.usb implementation
@@ -756,7 +736,10 @@ public class AntTransceiver extends AbstractAntTransceiver {
 		} finally {
 			lock.unlock();
 		}
-
+	}
+	
+	public void setClaimInterfaceStrategy(ClaimInterfaceStrategy cis){
+		this.claimInterfaceStrategy = cis;
 	}
 
 }
